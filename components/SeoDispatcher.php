@@ -14,16 +14,16 @@ class SeoDispatcher extends CApplicationComponent {
 
 
     public function registerSeo($model = null){
-        if(!$model){
+//        if(!$model){
             $this->registerPageTitle($this->render(SeoConfig::get($this->default_title_key)));
             $this->registerDescription($this->render(SeoConfig::get($this->default_description_key)));
             $this->registerKeywords($this->render(SeoConfig::get($this->default_keywords_key)));
-        }  else {
-            $prefix = underscore_case(get_class($model));
-            $this->registerPageTitle($this->render(SeoConfig::get($prefix.'_page_title'),$model));
-            $this->registerDescription($this->render(SeoConfig::get($prefix.'_description'),$model));
-            $this->registerKeywords($this->render(SeoConfig::get($prefix.'_keywords'),$model));
-        }
+//        }  else {
+//            $prefix = underscore_case(get_class($model));
+//            $this->registerPageTitle($this->render(SeoConfig::get($prefix.'_page_title'),$model));
+//            $this->registerDescription($this->render(SeoConfig::get($prefix.'_description'),$model));
+//            $this->registerKeywords($this->render(SeoConfig::get($prefix.'_keywords'),$model));
+//        }
     }
 
     public function registerPageTitle($title){
